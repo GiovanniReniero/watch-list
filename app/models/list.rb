@@ -19,6 +19,6 @@ class List < ApplicationRecord
   # list.movies.find(...)
   # ...more
 
-  validates :gnere, uniqueness: {case_sensitive: false}, presence: true
+  validates :genere, uniqueness: {case_sensitive: false}, presence: true
 
 end

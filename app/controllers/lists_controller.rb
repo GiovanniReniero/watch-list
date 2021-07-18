@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
 
+
   def index
    @lists = List.all  
   end
@@ -9,21 +10,23 @@ class ListsController < ApplicationController
   end
   
   def new
-    
+    @list = List.new    
   end
   
   def create
-    
+    @list = List.new(list_params)
+    if @list.save 
+    redirect_to lists_path
+    else 
+      render "lists/new"
+    end
+  
   end
   
 private
 
-  def params_list
+  def list_params
     params.require(:list).permit(:genere)  
   end
-
-  def find_list
-    @list = List.find(params[:id])
-  end
-
+ 
 end

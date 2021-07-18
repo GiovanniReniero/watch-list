@@ -1,14 +1,17 @@
 
 <div class="container">
-<br>
-<h3>Generes Available</h3>
-<br>
-  <ul class="list-group">
-  <% @lists.each do  |list| %>
-    <li class="list-group-item">
-      <a > <%= link_to "#{list.genere}", list_path(list.id)   %>  </a>
-      <% end %>
-  </li>
-</ul>
+  <br>
+  <h3>Generes Available</h3>
+  <br>
+    <ul class="list-group">
+    <% @lists.each do  |list| %>
+      <li class="list-group-item">
+        <a > <%= link_to "#{list.genere}", list_path(list.id)   %>  </a>
+        <% end %>
+      </li>
+    </ul>
+  <br>
+  <br>
+  <a > <%= link_to "Add a new Genere", new_list_path, class: "btn   btn-outline-success", role: "button"%> </a>
 </div>
 

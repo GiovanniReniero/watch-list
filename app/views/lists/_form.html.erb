@@ -1,0 +1,9 @@
+
+<div class="container border border-primary mt-5 p-3">
+    <%= simple_form_for  @list do |form|  %>
+      <%= form.input :genere, required: true %>
+      <%= form.button :submit, "Save", class: "btn  btn-outline-success my-3" %>
+    <% end %>
+</div>
+
+

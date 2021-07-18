@@ -4,5 +4,5 @@ class Bookmark < ApplicationRecord
   # @movie = @bookmark.movie 
   belongs_to :list #Each instance of Bookmark has one and only one instance of List
   validates :comment, length: { minimum: 6 }
-  validates :movie,  uniqueness: { scope: :list }
+  validates :movie,  uniqueness: { scope: :list, message:"The movie already belongs to this genere" }
 end

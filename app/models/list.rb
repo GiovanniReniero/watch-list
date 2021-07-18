@@ -1,5 +1,5 @@
 class List < ApplicationRecord
-  has_many :bookmarks, dependant: :destroy #Each instance of List has 0 or many instances of Bookmark and hence there are suddenly 17 methods available for maipulating data in the corresponding join models, such as:
+  has_many :bookmarks, dependent: :destroy #Each instance of List has 0 or many instances of Bookmark and hence there are suddenly 17 methods available for maipulating data in the corresponding join models, such as:
   # List.bookmarks  
   # List.bookmarks.count
   # List.bookmarks.any?

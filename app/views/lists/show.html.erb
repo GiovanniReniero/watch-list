@@ -1,0 +1,16 @@
+<div class="container">
+  <h5>This is the List show page</h5>
+  
+  <h1> <%= "#{@list.genere}" %> </h1>
+  <% @movies = @list.movies %>
+  <% @bookmark = @list.bookmarks %>
+  <% @movies.each do |movie|  %>
+    <h4> <%= "Movie: #{movie.title}" %></h4> 
+      <% @bookmark.each do |bookmark|  %>
+        <h5> <%= "Comments: #{bookmark.comment} "%> </h5>
+      <% end %>
+  <% end %>
+<br>
+
+<a class="btn btn-outline-success" href="/lists" role="button">Back to Generes</a>
+</div>

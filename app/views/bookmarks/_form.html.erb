@@ -1,0 +1,11 @@
+
+<div class="container border border-primary mt-5 p-3 fs-5 text fw-bold">
+  <%= simple_form_for  [@list, @bookmark] do |form| %>
+    <%= form.association :movie %>
+    <%= form.input :comment, required: true %>
+    <%= form.button :submit, "Add new bookmark", class: "btn btn-outline-success my-3 fs-6 fw-bold" %>
+  <% end %>
+</div>
+
+
+

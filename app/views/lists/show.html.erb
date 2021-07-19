@@ -5,12 +5,16 @@
   <% @movies = @list.movies %>
   <% @bookmark = @list.bookmarks %>
   <% @movies.each do |movie|  %>
-    <h4> <%= "Movie: #{movie.title}" %></h4> 
+    <h4> <strong> <%= " #{movie.title}" %> </strong></h4> 
+    <h5> <%= "OVERVIEW: #{movie.overview}" %></h5> 
       <% @bookmark.each do |bookmark|  %>
-        <h5> <%= "Comments: #{bookmark.comment} "%> </h5>
+        <h5> <%= "COMMENTS: #{bookmark.comment} "%> </h5>
       <% end %>
   <% end %>
 <br>
+
+
+<a> <%= link_to "Add an entry to the '#{@list.genere}' genere", new_list_bookmark_path(@list), class: "btn btn-outline-success "  %>  </a>
 
 <a class="btn btn-outline-success" href="/lists" role="button">Back to Generes</a>
 </div>

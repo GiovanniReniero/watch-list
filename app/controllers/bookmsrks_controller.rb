@@ -1,2 +1,0 @@
-class BookmsrksController < ApplicationController
-end

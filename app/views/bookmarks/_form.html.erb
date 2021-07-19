@@ -3,7 +3,7 @@
   <%= simple_form_for  [@list, @bookmark] do |form| %>
     <%= form.association :movie %>
     <%= form.input :comment, required: true %>
-    <%= form.button :submit, "Add new bookmark", class: "btn btn-outline-success my-3 fs-6 fw-bold" %>
+    <%= form.button :submit, "Add new bookmark", class: "btn btn-outline-success my-3 fs-6 fw-bold border-3" %>
   <% end %>
 </div>
 

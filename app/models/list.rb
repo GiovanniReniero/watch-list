@@ -8,10 +8,6 @@ class List < ApplicationRecord
   # list.bookmarks.find(...)
   # ...more
   
-  
-  
-  
-  
   has_many :movies, through: :bookmarks #Each instance of List has 0 or many instances of Movie through Bookmark, hence there are suddenly 17 methods available for maipulating data in the corresponding join models, such as:
   # List.movies  
   # List.movies.count
@@ -19,6 +15,7 @@ class List < ApplicationRecord
   # List.movies.create(...)
   # list.movies.find(...)
   # ...more
+
   auto_strip_attributes :genere
   auto_strip_attributes :genere, squish: true
   # strip_attributes

@@ -60,6 +60,8 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    auto_strip_attributes (2.6.0)
+      activerecord (>= 4.0)
     autoprefixer-rails (10.2.5.0)
       execjs (< 2.8.0)
     bindex (0.8.1)
@@ -162,6 +164,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    strip_attributes (1.11.0)
+      activemodel (>= 3.0, < 7.0)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -188,6 +192,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  auto_strip_attributes (~> 2.6)
   autoprefixer-rails (= 10.2.5)
   bootsnap (>= 1.4.2)
   byebug
@@ -201,6 +206,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  strip_attributes
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
@@ -210,4 +216,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.1.4
+   2.2.24

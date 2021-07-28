@@ -15,12 +15,10 @@ $font-size-base: 1rem;
 // Colors
 $body-color: $gray;
 $primary:    $blue;
-$primary:    $cornflower;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
-$corn:       $cornflower;
 
 // Buttons & inputs' radius
 $border-radius:    2px;
@@ -28,3 +26,9 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+$body-color: cornflowerblue;
+$danger-1: #6A82D8ff;
+$success: #6F6EC3ff;
+$info: #7A489Aff;
+$danger: #803485ff;
+$warning: #852170ff;

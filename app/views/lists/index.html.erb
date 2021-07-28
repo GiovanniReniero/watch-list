@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand " href="#">TheMovieLister</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,15 +14,19 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Our Lists
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <ul class="dropdown-menu"     aria-labelledby="navbarDropdown">
+            <% @lists.each do  |list| %>
+            <li> 
+               <a > <%= link_to "#{list.genere}", list_path(list.id),  class: "dropdown-item " %> </a>
+              </li>
+            <% end %>
           </ul>
         </li>
+
+    
+    
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
@@ -36,35 +40,21 @@
 </nav>
 
 <div class="banner" >
-
 </div>
 
 <div class="container">
   <br>
-  <h3>Generes Available</h3>
+  <h3>Choose from our list of Genres</h3>
   <br>
   
-    <ul class="list-group ">
+    <div class="list-group ">
     <% @lists.each do  |list| %>
-     
-        <a > <%= link_to "#{list.genere}", list_path(list.id), class: "list-group-item fs-6 fw-bold text-primary" %> </a>
+        <a > <%= link_to "#{list.genere}", list_path(list.id), class: "list-group-item fs-6 fw-bold text-info" %> </a>
         <% end %>
-      </li>
-    </ul>
+    </div>
   <br>
   <br>
   <a > <%= link_to "Add a new Genere", new_list_path, class: "btn   btn-outline-success fs-6 fw-bold  border-3", role: "button"%> </a>
-<br>
-<br>
-
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action   active" aria-current="true">
-      The current link item
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">A  second link item</a>
-    <a href="#" class="list-group-item list-group-item-action">A  third link item</a>
-    <a href="#" class="list-group-item list-group-item-action">A  fourth link item</a>
-    <a href="#" class="list-group-item list-group-item-action   disabled" tabindex="-1" aria-disabled="true">A disabled link  item</a>
-  </div>
-
+  <br>
+  <br>
 </div>

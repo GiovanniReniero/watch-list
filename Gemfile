@@ -24,6 +24,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
 gem 'auto_strip_attributes', '~> 2.6'
 gem "strip_attributes"
+gem 'typedjs-rails', '~> 2.0', '>= 2.0.9'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

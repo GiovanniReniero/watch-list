@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require'open-uri'
+require'json'
 
 def seeder
 
@@ -39,18 +40,39 @@ def seeder
 
   @movie = Movie.new(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
   @list = List.new( genere: "Action")
-  @bookmark = Bookmark.new(comment: "Great line of very well known actros in an action packed thriller of a movie. Well worth the watch.")
+  @bookmark = Bookmark.new(comment: "Great line of very well known actors in an action packed thriller of a movie. Well worth the watch.")
   @bookmark.list = @list
   @bookmark.movie = @movie
   @movie.save
   @list.save
   @bookmark.save
-
-
-  
-
 end
 
+def api_seeds
+  api_key = "39e794b0fe1863071a29ac7f621500a8"
+  n=2005
+  while n < 2020
+    url = "https://api.themoviedb.org/3/discover/movie?api_key=#{api_key}&primary_release_year=#{n}&region=GB&sort_by=vote_average.desc"
+    puts "======>#{n}<======="
+    # 10.times do |i|
+      # puts "Importing movies from page #{i + 1}"
+      movies_serialized = URI.open(url).read
+      movies = JSON.parse(movies_serialized)["results"]
+      # movies = JSON.parse(open("#{url}?page=#{i + 1}").read)['results']
+      movies.each do |movie|
+        puts "Creating #{movie['title']}"
+        base_poster_url = "https://image.tmdb.org/t/p/original"
+        Movie.create(
+          title: movie['title'],
+          overview: movie['overview'],
+          poster_url: "#{base_poster_url}#{movie['poster_path']}",
+          rating: movie['vote_average']
+        )
+      end
+    n+=1
+  end
+end
+  
 
 
 puts "Cleansing Database..."
@@ -60,6 +82,7 @@ Bookmark.destroy_all
 puts "... Database cleansed"
 puts "Seeding Databse....."
 seeder
-puts "Seeding Completed!!!.... #{Movie.count} movie seeds"
-puts "Seeding Completed!!!.... #{List.count} list seeds"
+api_seeds
+puts "Seeding locally.... #{Movie.count} movie seeds"
+puts "Seeding remotely.... #{List.count} list seeds"
 puts "Seeding Completed!!!.... #{Bookmark.count} bookmark seeds"

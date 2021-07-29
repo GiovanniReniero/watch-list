@@ -10,7 +10,8 @@
     "bootstrap": "^5.0.2",
     "core-js": "^3.15.2",
     "regenerator-runtime": "^0.13.7",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "typed.js": "^2.0.12"
   },
   "version": "0.1.0",
   "devDependencies": {

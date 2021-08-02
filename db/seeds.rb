@@ -49,7 +49,7 @@ def seeder
 end
 
 def api_seeds
-  api_key = "39e794b0fe1863071a29ac7f621500a8"
+  api_key
   n=2005
   while n < 2021
     url = "https://api.themoviedb.org/3/discover/movie?api_key=#{api_key}&primary_release_year=#{n}&region=GB&sort_by=vote_average.desc"
